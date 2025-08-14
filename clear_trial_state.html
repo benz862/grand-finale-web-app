@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Trial State</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: #E4B64A;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background-color: #d4a63a;
+        }
+        .status {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Clear Trial State for info@skillbinder.com</h1>
+        
+        <div class="status info">
+            <strong>Instructions:</strong><br>
+            1. Make sure you're logged into <a href="https://grandfinale.skillbinder.com" target="_blank">grandfinale.skillbinder.com</a> with info@skillbinder.com<br>
+            2. Click the button below to clear the trial state<br>
+            3. Refresh the main app page to see the changes
+        </div>
+        
+        <button onclick="clearTrialState()">Clear Trial State</button>
+        <button onclick="checkCurrentState()">Check Current State</button>
+        
+        <div id="status" class="status" style="display: none;"></div>
+    </div>
+
+    <script>
+        function clearTrialState() {
+            try {
+                // Clear trial-related localStorage items
+                localStorage.removeItem('trialState');
+                localStorage.removeItem('upgradeEvent');
+                localStorage.removeItem('startingTrial');
+                
+                const statusDiv = document.getElementById('status');
+                statusDiv.className = 'status success';
+                statusDiv.innerHTML = `
+                    <strong>✅ Trial state cleared successfully!</strong><br>
+                    The following items were removed from localStorage:<br>
+                    • trialState<br>
+                    • upgradeEvent<br>
+                    • startingTrial<br><br>
+                    <strong>Next steps:</strong><br>
+                    1. Go to <a href="https://grandfinale.skillbinder.com/app" target="_blank">grandfinale.skillbinder.com/app</a><br>
+                    2. Refresh the page (Ctrl+F5 or Cmd+Shift+R)<br>
+                    3. You should now see "Lite Plan" instead of "Free Trial"
+                `;
+                statusDiv.style.display = 'block';
+            } catch (error) {
+                const statusDiv = document.getElementById('status');
+                statusDiv.className = 'status info';
+                statusDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+                statusDiv.style.display = 'block';
+            }
+        }
+        
+        function checkCurrentState() {
+            const trialState = localStorage.getItem('trialState');
+            const upgradeEvent = localStorage.getItem('upgradeEvent');
+            const startingTrial = localStorage.getItem('startingTrial');
+            
+            const statusDiv = document.getElementById('status');
+            statusDiv.className = 'status info';
+            statusDiv.innerHTML = `
+                <strong>Current localStorage state:</strong><br>
+                • trialState: ${trialState ? 'Present' : 'Not found'}<br>
+                • upgradeEvent: ${upgradeEvent ? 'Present' : 'Not found'}<br>
+                • startingTrial: ${startingTrial ? 'Present' : 'Not found'}<br><br>
+                ${trialState ? `<strong>trialState content:</strong><br><pre>${trialState}</pre>` : ''}
+            `;
+            statusDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

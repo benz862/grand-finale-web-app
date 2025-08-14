@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "couples-bundle.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/couples-bundle.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+} 

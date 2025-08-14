@@ -1,0 +1,32 @@
+{
+  "name": "grand-finale-couples-api",
+  "version": "1.0.0",
+  "description": "Backend API for The Grand Finale Couples Bundle feature",
+  "main": "couples-bundle.js",
+  "type": "module",
+  "scripts": {
+    "start": "node couples-bundle.js",
+    "dev": "nodemon couples-bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "stripe": "^14.0.0",
+    "@supabase/supabase-js": "^2.38.0",
+    "@sendgrid/mail": "^8.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "stripe",
+    "supabase",
+    "couples",
+    "bundle",
+    "legacy-planning"
+  ],
+  "author": "SkillBinder",
+  "license": "MIT"
+} 

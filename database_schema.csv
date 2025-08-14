@@ -1,0 +1,66 @@
+table_name,column_name,data_type,constraints,description
+users,id,uuid,PRIMARY KEY DEFAULT gen_random_uuid(),Unique identifier for each user
+users,email,varchar(255),UNIQUE NOT NULL,User's email address
+users,created_at,timestamp,DEFAULT now(),Account creation timestamp
+users,updated_at,timestamp,DEFAULT now(),Last update timestamp
+personal_info,id,uuid,PRIMARY KEY DEFAULT gen_random_uuid(),Unique identifier
+personal_info,user_id,uuid,FOREIGN KEY REFERENCES users(id) ON DELETE CASCADE,Reference to user
+personal_info,legal_first_name,varchar(100),NOT NULL,Legal first name
+personal_info,legal_last_name,varchar(100),NOT NULL,Legal last name
+personal_info,preferred_name,varchar(100),,Preferred name
+personal_info,date_of_birth,date,NOT NULL,Date of birth
+personal_info,place_of_birth,varchar(200),,Place of birth
+personal_info,country_of_citizenship,varchar(100),,Country of citizenship
+personal_info,language_spoken,varchar(100),,Primary language spoken
+personal_info,created_at,timestamp,DEFAULT now(),Record creation timestamp
+personal_info,updated_at,timestamp,DEFAULT now(),Last update timestamp
+addresses,id,uuid,PRIMARY KEY DEFAULT gen_random_uuid(),Unique identifier
+addresses,user_id,uuid,FOREIGN KEY REFERENCES users(id) ON DELETE CASCADE,Reference to user
+addresses,address_type,varchar(50),NOT NULL,Type of address (home work etc)
+addresses,street,varchar(200),NOT NULL,Street address
+addresses,city,varchar(100),NOT NULL,City
+addresses,state,varchar(100),NOT NULL,State or province
+addresses,zip,varchar(20),NOT NULL,ZIP or postal code
+addresses,country,varchar(100),NOT NULL,Country
+addresses,is_primary,boolean,DEFAULT false,Whether this is primary address
+addresses,created_at,timestamp,DEFAULT now(),Record creation timestamp
+addresses,updated_at,timestamp,DEFAULT now(),Last update timestamp
+phones,id,uuid,PRIMARY KEY DEFAULT gen_random_uuid(),Unique identifier
+phones,user_id,uuid,FOREIGN KEY REFERENCES users(id) ON DELETE CASCADE,Reference to user
+phones,phone_type,varchar(50),NOT NULL,Type of phone (mobile home work)
+phones,phone_number,varchar(20),NOT NULL,Phone number
+phones,is_primary,boolean,DEFAULT false,Whether this is primary phone
+phones,created_at,timestamp,DEFAULT now(),Record creation timestamp
+phones,updated_at,timestamp,DEFAULT now(),Last update timestamp
+emails,id,uuid,PRIMARY KEY DEFAULT gen_random_uuid(),Unique identifier
+emails,user_id,uuid,FOREIGN KEY REFERENCES users(id) ON DELETE CASCADE,Reference to user
+emails,email,varchar(255),NOT NULL,Email address
+emails,email_type,varchar(50),NOT NULL,Type of email (personal work)
+emails,is_primary,boolean,DEFAULT false,Whether this is primary email
+emails,created_at,timestamp,DEFAULT now(),Record creation timestamp
+emails,updated_at,timestamp,DEFAULT now(),Last update timestamp
+emergency_contacts,id,uuid,PRIMARY KEY DEFAULT gen_random_uuid(),Unique identifier
+emergency_contacts,user_id,uuid,FOREIGN KEY REFERENCES users(id) ON DELETE CASCADE,Reference to user
+emergency_contacts,full_name,varchar(200),NOT NULL,Full name of emergency contact
+emergency_contacts,relationship,varchar(100),NOT NULL,Relationship to user
+emergency_contacts,custom_relationship,varchar(100),,Custom relationship if other selected
+emergency_contacts,phone,varchar(20),NOT NULL,Primary phone number
+emergency_contacts,phone_alt,varchar(20),,Alternative phone number
+emergency_contacts,email,varchar(255),,Email address
+emergency_contacts,address,varchar(200),,Street address
+emergency_contacts,city,varchar(100),,City
+emergency_contacts,state,varchar(100),,State or province
+emergency_contacts,zip,varchar(20),,ZIP or postal code
+emergency_contacts,country,varchar(100),,Country
+emergency_contacts,is_primary,boolean,DEFAULT false,Whether this is primary emergency contact
+emergency_contacts,notes,text,,Additional notes
+emergency_contacts,created_at,timestamp,DEFAULT now(),Record creation timestamp
+emergency_contacts,updated_at,timestamp,DEFAULT now(),Last update timestamp
+legal_documents,id,uuid,PRIMARY KEY DEFAULT gen_random_uuid(),Unique identifier
+legal_documents,user_id,uuid,FOREIGN KEY REFERENCES users(id) ON DELETE CASCADE,Reference to user
+legal_documents,document_type,varchar(100),NOT NULL,Type of legal document
+legal_documents,has_document,varchar(10),NOT NULL,Whether user has this document (yes/no/unknown)
+legal_documents,location,varchar(500),,Location of document
+legal_documents,notes,text,,Additional notes about document
+legal_documents,created_at,timestamp,DEFAULT now(),Record creation timestamp
+legal_documents,updated_at,timestamp,DEFAULT now(),Last update timestamp

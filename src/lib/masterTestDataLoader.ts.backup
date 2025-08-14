@@ -1,0 +1,1347 @@
+// Master Test Data Loader for all 16 sections of The Grand Finale
+// This creates realistic, comprehensive test data for PDF generation testing
+// Uses correct localStorage keys and data structures that match actual form interfaces
+
+export const loadAllTestData = () => {
+  console.log('Loading ALL test data for Margaret Thompson...');
+  
+  try {
+    // Section 1: Funeral & Final Arrangements
+    const funeralFinalArrangementsData = {
+      burialCremationDonation: 'cremation',
+      burialDetails: 'Prefer cremation with ashes scattered at Golden Gate Park Rose Garden. Natural burial preferred.',
+      funeralStyle: 'Celebration of Life - Non-religious, family and friends gathering with bright colors',
+      serviceMusic: 'Amazing Grace (instrumental), Here Comes the Sun by The Beatles, Bridge Over Troubled Water',
+      serviceReadings: 'Psalm 23, Do Not Stand at My Grave and Weep by Mary Elizabeth Frye, family reflections',
+      serviceOfficiant: 'Family members and close friends sharing memories, no formal religious officiant',
+      guestPrivacy: 'Open to all family and friends, public obituary with service details',
+      guestNotes: 'Encourage bright colors, bring photos and memories to share, casual attire welcome',
+      obituaryPreWritten: 'yes',
+      obituaryStoredAt: 'Home office filing cabinet and Google Drive - Legacy folder',
+      headstoneType: 'memorial_plaque',
+      headstoneOther: '',
+      headstoneMaterial: 'Bronze plaque',
+      headstoneInscription: 'Margaret Elizabeth Thompson\n1962 - 2024\nBeloved Wife, Mother, and Friend\n"Live with kindness and purpose"',
+      headstoneDesign: 'Simple bronze plaque with engraved text and small flower design',
+      headstoneLocation: 'Golden Gate Park Memorial Garden, San Francisco, CA',
+      headstoneResponsible: 'David Thompson (spouse) - contact park services for arrangements',
+      donationsOrganizations: 'American Cancer Society, San Francisco SPCA, Children\'s Hospital Foundation',
+      specialRituals: 'Release of wildflower seeds, planting of memorial rose bush, sharing of favorite memories'
+    };
+    localStorage.setItem('funeralFinalArrangementsData', JSON.stringify(funeralFinalArrangementsData));
+
+    // Section 2: Personal Information (using actual form structure)
+    const personalInformationData = {
+      firstName: 'Margaret',
+      middleName: 'Elizabeth',
+      lastName: 'Thompson',
+      nickname: 'Maggie',
+      dob: '1962-03-15',
+      gender: 'female',
+      pronouns: 'she/her',
+      customPronoun: '',
+      countryOfBirth: 'United States',
+      provinceOfBirth: 'California',
+      cityOfBirth: 'Oakland',
+      citizenships: ['United States'],
+      primaryLanguage: 'English',
+      secondaryLanguage: 'Spanish',
+      ssn: '***-**-1234',
+      passport: 'A12345678',
+      passportExpiry: '2025-03-15',
+      license: 'DL98765432',
+      licenseExpiry: '2025-03-15',
+      licenseProvince: 'California',
+      phones: [
+        { type: 'Mobile', number: '(415) 555-0123' },
+        { type: 'Home', number: '(415) 555-0456' }
+      ],
+      addresses: [
+        {
+          type: 'Home',
+          street: '1234 Oak Street',
+          city: 'San Francisco',
+          state: 'CA',
+          zip: '94102',
+          country: 'United States'
+        }
+      ],
+      contacts: [
+        {
+          name: 'David Thompson',
+          relationship: 'Spouse',
+          phone: '(415) 555-0124',
+          email: 'david.thompson@email.com',
+          authorized: 'Yes',
+          emergency: 'Yes'
+        },
+        {
+          name: 'Sarah Thompson-Garcia',
+          relationship: 'Daughter',
+          phone: '(503) 555-0789',
+          email: 'sarah.garcia@email.com',
+          authorized: 'Yes',
+          emergency: 'Yes'
+        }
+      ],
+      fatherName: 'Robert Johnson',
+      motherName: 'Helen Johnson',
+      stepfatherName: '',
+      stepmotherName: '',
+      relationshipStatus: 'married',
+      spouseName: 'David Thompson',
+      spouseContact: '(415) 555-0124',
+      children: [
+        { name: 'Sarah Thompson-Garcia', age: '36', relationship: 'Daughter' },
+        { name: 'Michael Thompson', age: '33', relationship: 'Son' }
+      ],
+      religiousAffiliation: 'Non-denominational Christian',
+      placeOfWorship: 'Grace Community Church',
+      clergyName: 'Pastor Jennifer Mills',
+      clergyPhone: '(415) 555-0321',
+      clergyEmail: 'pastor.mills@gracecc.org',
+      lastRites: 'no',
+      clergyPresent: 'optional',
+      scripturePreferences: 'Psalm 23, 1 Corinthians 13',
+      prayerStyle: 'Simple, conversational prayers',
+      burialRituals: 'Non-denominational blessing, family prayers',
+      employmentStatus: 'retired',
+      occupation: 'Former Elementary School Teacher',
+      employer: 'San Francisco Unified School District (Retired)',
+      employerAddress: '555 Franklin Street, San Francisco, CA 94102',
+      workPhone: '',
+      supervisorName: '',
+      workNotes: 'Retired in 2022 after 35 years of teaching',
+      willLocation: 'Home safe and attorney office',
+      unlockCode: 'Stored in LastPass password manager',
+      passwordManager: 'LastPass',
+      backupCodeStorage: 'Home safe and with Sarah (daughter)',
+      keyAccounts: 'Wells Fargo, Chase Bank, Fidelity 401k, Gmail',
+      digitalDocsLocation: 'Google Drive - Legacy folder, iCloud',
+      criticalDocs: [
+        { type: 'Will', location: 'Home safe, attorney office' },
+        { type: 'Trust Documents', location: 'Attorney office' },
+        { type: 'Insurance Policies', location: 'Home filing cabinet' }
+      ],
+      criticalDocLocations: 'Home safe combination: 0315, Attorney: Robert Martinez'
+    };
+    localStorage.setItem('personalInformationData', JSON.stringify(personalInformationData));
+
+    // Section 3: Medical Information
+    const medicalInfoData = {
+      primaryPhysician: 'Dr. Jennifer Chen, MD',
+      physicianContact: '(415) 555-0987',
+      hospitalPreference: 'UCSF Medical Center',
+      allergies: 'Penicillin (severe reaction), Shellfish (hives)',
+      currentMedications: 'Lisinopril 10mg daily, Metformin 500mg twice daily, Vitamin D3 1000IU',
+      medicalConditions: 'Type 2 Diabetes (well-controlled), Hypertension',
+      medicalHistory: 'Appendectomy 1985, C-section 1987 and 1990, Cholesterol management',
+      emergencyContacts: 'David Thompson (spouse) (415) 555-0124, Sarah Garcia (daughter) (503) 555-0789',
+      insuranceProvider: 'Blue Cross Blue Shield',
+      policyNumber: 'BC123456789',
+      groupNumber: 'GRP987654',
+      insurancePhone: '1-800-555-0123',
+      pharmacy: 'Walgreens on Market Street',
+      pharmacyPhone: '(415) 555-0654',
+      bloodType: 'O-positive',
+      organDonor: 'yes',
+      advancedDirectives: 'Do not resuscitate, comfort care only, no extraordinary measures',
+      healthcareProxy: 'Sarah Thompson-Garcia',
+      medicalPowerOfAttorney: 'David Thompson (primary), Sarah Thompson-Garcia (secondary)'
+    };
+    localStorage.setItem('medicalInfoData', JSON.stringify(medicalInfoData));
+
+    // Section 4: Digital Life (using actual form structure)
+    const digitalLifeData = {
+      passwordManagerUsed: 'yes',
+      passwordManagerService: 'LastPass',
+      passwordManagerAccess: 'Master password: Legacy2024!, Backup codes in home safe',
+      twoFactorDevices: 'iPhone 14, Google Authenticator app, backup codes in safe',
+      backupCodesLocation: 'Home safe and Google Drive - Legacy folder',
+      cancelationInstructions: 'Contact each service directly, provide death certificate, follow their specific procedures',
+      usbStorageLocation: 'Home office desk drawer and safety deposit box',
+      digitalExecutorName: 'Sarah Thompson-Garcia',
+      digitalExecutorLocation: 'Home address: 456 Elm Street, Portland, OR 97201',
+      emailAccounts: [
+        {
+          id: '1',
+          email: 'margaret.thompson@gmail.com',
+          username: 'margaret.thompson',
+          password: 'Stored in LastPass',
+          notes: 'Primary personal email'
+        },
+        {
+          id: '2',
+          email: 'maggie.teacher@sfusd.edu',
+          username: 'mthompson',
+          password: 'Stored in LastPass',
+          notes: 'Retired work email - may be deactivated'
+        }
+      ],
+      websiteLogins: [
+        {
+          id: '1',
+          website: 'Amazon',
+          username: 'margaret.thompson',
+          password: 'Stored in LastPass',
+          registeredEmail: 'margaret.thompson@gmail.com'
+        },
+        {
+          id: '2',
+          website: 'Netflix',
+          username: 'margaret.thompson',
+          password: 'Stored in LastPass',
+          registeredEmail: 'margaret.thompson@gmail.com'
+        },
+        {
+          id: '3',
+          website: 'Wells Fargo Online Banking',
+          username: 'mthompson1962',
+          password: 'Stored in LastPass',
+          registeredEmail: 'margaret.thompson@gmail.com'
+        }
+      ],
+      blogWebsites: [],
+      emailProviders: [
+        {
+          id: '1',
+          provider: 'Gmail',
+          username: 'margaret.thompson@gmail.com',
+          password: 'Stored in LastPass',
+          notes: 'Primary email account'
+        }
+      ],
+      socialMediaAccounts: [
+        {
+          id: '1',
+          platform: 'Facebook',
+          username: 'margaret.thompson.sf',
+          password: 'Stored in LastPass',
+          notes: 'Used to keep in touch with former students and colleagues'
+        },
+        {
+          id: '2',
+          platform: 'Instagram',
+          username: 'maggiet_sf',
+          password: 'Stored in LastPass',
+          notes: 'Family photos and travel memories'
+        }
+      ],
+      cloudStorageAccounts: [
+        {
+          id: '1',
+          service: 'Google Drive',
+          username: 'margaret.thompson@gmail.com',
+          password: 'Stored in LastPass',
+          notes: 'Family photos, important documents in Legacy folder'
+        },
+        {
+          id: '2',
+          service: 'iCloud',
+          username: 'margaret.thompson@icloud.com',
+          password: 'Stored in LastPass',
+          notes: 'iPhone backups and photos'
+        }
+      ]
+    };
+    localStorage.setItem('digitalLifeData', JSON.stringify(digitalLifeData));
+
+    // Section 5: Accounts & Memberships
+    const accountsMembershipsData = {
+      subscriptionServices: [
+        { name: 'Netflix Premium', username: 'margaret.thompson', cost: '$15.99/month', renewalDate: '15th of each month' },
+        { name: 'Amazon Prime', username: 'margaret.thompson', cost: '$139/year', renewalDate: 'March 15th annually' },
+        { name: 'Spotify Family', username: 'margaret.thompson', cost: '$16.99/month', renewalDate: '8th of each month' },
+        { name: 'New York Times Digital', username: 'mthompson62', cost: '$25/month', renewalDate: '22nd of each month' }
+      ],
+      membershipOrganizations: [
+        { name: 'AARP', memberNumber: 'AARP123456', benefits: 'Healthcare discounts, travel benefits', renewalDate: 'Annual - December' },
+        { name: 'San Francisco Museum of Modern Art', memberNumber: 'SFMOMA7890', benefits: 'Free admission, member events', renewalDate: 'Annual - June' },
+        { name: 'California Retired Teachers Association', memberNumber: 'CRTA5678', benefits: 'Healthcare plans, social events', renewalDate: 'Annual - September' }
+      ],
+      loyaltyPrograms: [
+        { name: 'United Airlines MileagePlus', accountNumber: 'MP123456789', points: '45,000 miles', notes: 'Expires 18 months after last activity' },
+        { name: 'Starbucks Rewards', accountNumber: 'SB987654321', points: '1,200 stars', notes: 'Linked to mobile app' },
+        { name: 'Safeway Club Card', accountNumber: 'SC456789123', points: 'Gas rewards points', notes: 'Physical card in wallet' }
+      ],
+      creditCards: [
+        { issuer: 'Chase Sapphire', lastFour: '1234', limit: '$10,000', notes: 'Primary travel card' },
+        { issuer: 'Wells Fargo Cash Wise', lastFour: '5678', limit: '$5,000', notes: 'Everyday purchases' }
+      ],
+      utilityAccounts: [
+        { service: 'PG&E (Gas & Electric)', accountNumber: 'PGE789012', autoPayStatus: 'Yes', notes: 'Auto-pay from checking account' },
+        { service: 'Comcast Xfinity', accountNumber: 'COM345678', autoPayStatus: 'Yes', notes: 'Internet and cable TV' },
+        { service: 'SF Water Department', accountNumber: 'SF901234', autoPayStatus: 'No', notes: 'Quarterly billing' }
+      ]
+    };
+    localStorage.setItem('accountsMembershipsData', JSON.stringify(accountsMembershipsData));
+
+    // Section 6: Key Contacts
+    const keyContactsData = {
+      attorney: { 
+        name: 'Robert K. Martinez, Esq.', 
+        firm: 'Martinez & Associates', 
+        phone: '(415) 555-0789',
+        email: 'rmartinez@martinez-law.com',
+        address: '100 Montgomery Street, San Francisco, CA 94104',
+        specialization: 'Estate Planning and Probate Law'
+      },
+      accountant: { 
+        name: 'Lisa Chang, CPA', 
+        firm: 'Chang Financial Services', 
+        phone: '(415) 555-0321',
+        email: 'lisa.chang@changfinancial.com',
+        address: '200 Market Street, San Francisco, CA 94105',
+        specialization: 'Tax Planning and Preparation'
+      },
+      financialAdvisor: { 
+        name: 'James Wilson', 
+        firm: 'Wells Fargo Advisors', 
+        phone: '(415) 555-0654',
+        email: 'james.wilson@wellsfargoadvisors.com',
+        address: '300 California Street, San Francisco, CA 94104',
+        specialization: 'Investment Management and Retirement Planning'
+      },
+      insuranceAgent: {
+        name: 'Maria Rodriguez',
+        firm: 'State Farm Insurance',
+        phone: '(415) 555-0987',
+        email: 'maria.rodriguez@statefarm.com',
+        address: '400 Van Ness Avenue, San Francisco, CA 94102',
+        specialization: 'Life and Property Insurance'
+      }
+    };
+    localStorage.setItem('keyContactsData', JSON.stringify(keyContactsData));
+
+    // Section 7: Finance & Business
+    const financeBusinessData = {
+      bankAccounts: [
+        { 
+          bank: 'Wells Fargo', 
+          accountType: 'Checking', 
+          accountNumber: '****1234', 
+          balance: '$15,000',
+          branch: 'Castro Street Branch',
+          contactPhone: '(415) 555-2000'
+        },
+        { 
+          bank: 'Chase Bank', 
+          accountType: 'Savings', 
+          accountNumber: '****5678', 
+          balance: '$45,000',
+          branch: 'Market Street Branch',
+          contactPhone: '(415) 555-3000'
+        }
+      ],
+      investments: [
+        { 
+          type: '401k', 
+          institution: 'Fidelity', 
+          accountNumber: '****9876', 
+          value: '$125,000',
+          contactPhone: '1-800-343-3548',
+          advisor: 'James Wilson'
+        },
+        {
+          type: 'IRA',
+          institution: 'Vanguard',
+          accountNumber: '****5432',
+          value: '$78,000',
+          contactPhone: '1-877-662-7447',
+          advisor: 'Online account'
+        }
+      ],
+      creditCards: [
+        {
+          issuer: 'Chase Sapphire Reserve',
+          lastFour: '1234',
+          limit: '$20,000',
+          balance: '$2,500',
+          paymentDate: '15th of each month'
+        }
+      ],
+      businessInterests: [],
+      realEstate: [
+        {
+          type: 'Primary Residence',
+          address: '1234 Oak Street, San Francisco, CA 94102',
+          purchaseDate: '1995-06-01',
+          purchasePrice: '$350,000',
+          currentValue: '$850,000',
+          mortgage: '$320,000',
+          monthlyPayment: '$2,800'
+        }
+      ]
+    };
+    localStorage.setItem('financeBusinessData', JSON.stringify(financeBusinessData));
+
+    // Section 8: Beneficiaries & Inheritance
+    const beneficiariesInheritanceData = {
+      primaryBeneficiaries: [
+        {
+          name: 'David Thompson',
+          relationship: 'Spouse',
+          percentage: '50%',
+          ssn: '***-**-5678',
+          address: '1234 Oak Street, San Francisco, CA 94102',
+          phone: '(415) 555-0124',
+          email: 'david.thompson@email.com'
+        },
+        {
+          name: 'Sarah Thompson-Garcia',
+          relationship: 'Daughter',
+          percentage: '25%',
+          ssn: '***-**-9012',
+          address: '456 Elm Street, Portland, OR 97201',
+          phone: '(503) 555-0789',
+          email: 'sarah.garcia@email.com'
+        },
+        {
+          name: 'Michael Thompson',
+          relationship: 'Son',
+          percentage: '25%',
+          ssn: '***-**-3456',
+          address: '789 Pine Avenue, Seattle, WA 98101',
+          phone: '(206) 555-0234',
+          email: 'michael.thompson@email.com'
+        }
+      ],
+      contingentBeneficiaries: [
+        {
+          name: 'American Cancer Society',
+          relationship: 'Charity',
+          percentage: '100%',
+          address: '250 Williams Street NW, Atlanta, GA 30303',
+          phone: '1-800-227-2345',
+          taxId: '13-1788491'
+        }
+      ],
+      specialInstructions: 'Family heirlooms to be distributed according to attached inventory list. Grandmother\'s ring to Sarah, antique tools to Michael.',
+      executor: {
+        primary: 'David Thompson',
+        secondary: 'Sarah Thompson-Garcia',
+        attorney: 'Robert K. Martinez, Esq.'
+      }
+    };
+    localStorage.setItem('beneficiariesInheritanceData', JSON.stringify(beneficiariesInheritanceData));
+
+    // Section 9: Personal Property & Real Estate
+    const personalPropertyRealEstateData = {
+      valuableItems: [
+        {
+          item: 'Grandmother\'s Diamond Ring',
+          value: '$5,000',
+          location: 'Bedroom jewelry box',
+          recipient: 'Sarah Thompson-Garcia',
+          description: '1940s Art Deco style, 1.5 carat diamond',
+          appraisalDate: '2023-01-15'
+        },
+        {
+          item: 'Antique Piano',
+          value: '$3,500',
+          location: 'Living room',
+          recipient: 'Michael Thompson',
+          description: '1920s Baldwin Baby Grand Piano',
+          appraisalDate: '2022-08-20'
+        },
+        {
+          item: 'First Edition Book Collection',
+          value: '$2,000',
+          location: 'Home library',
+          recipient: 'Both children to share',
+          description: 'First edition novels including Hemingway and Steinbeck',
+          appraisalDate: '2023-03-10'
+        }
+      ],
+      collections: [
+        {
+          type: 'Vintage Jewelry Collection',
+          value: '$1,500',
+          location: 'Bedroom safe',
+          notes: 'Various pieces collected over 30 years'
+        }
+      ],
+      vehicles: [
+        {
+          make: 'Toyota',
+          model: 'Camry',
+          year: '2019',
+          vin: '1234567890ABCDEF',
+          value: '$18,000',
+          lienHolder: 'None - Paid in full',
+          registration: 'Expires March 2025'
+        }
+      ],
+      realEstate: [
+        {
+          property: 'Primary Residence',
+          address: '1234 Oak Street, San Francisco, CA 94102',
+          value: '$850,000',
+          mortgage: '$320,000',
+          propertyTax: '$8,500/year',
+          insurance: 'State Farm Policy #SF123456'
+        }
+      ]
+    };
+    localStorage.setItem('personalPropertyRealEstateData', JSON.stringify(personalPropertyRealEstateData));
+
+    // Section 10: Pet Care & Survivor Notes
+    const petCareData = [
+      {
+        name: 'Luna',
+        type: 'Golden Retriever',
+        age: '5 years',
+        breed: 'Golden Retriever',
+        color: 'Golden',
+        weight: '65 lbs',
+        veterinarian: 'Dr. Smith at Bay Area Animal Hospital',
+        vetPhone: '(415) 555-1234',
+        vetAddress: '500 Geary Street, San Francisco, CA 94102',
+        caregiver: 'Sarah Thompson-Garcia',
+        caregiverPhone: '(503) 555-0789',
+        specialNeeds: 'Daily medication for hip dysplasia - 1 pill with morning food. Loves long walks but limit to 30 minutes.',
+        favoriteFood: 'Royal Canin Golden Retriever Adult formula',
+        temperament: 'Gentle, loves children, good with other dogs',
+        microchipNumber: 'MC123456789',
+        registrationNumber: 'AKC789123456'
+      }
+    ];
+    localStorage.setItem('petCareData', JSON.stringify(petCareData));
+
+    const survivorNotesData = {
+      spouseMessage: 'My dearest David, you have been my rock and best friend for over 30 years. Thank you for your unwavering love and support. Please take care of yourself and know that it\'s okay to find happiness again. I will always love you.',
+      childrenMessage: 'To my beautiful children, Sarah and Michael, you have brought such incredible joy to my life. I am so proud of the amazing people you have become. Take care of each other and your father. Live your lives to the fullest and remember that I will always be with you in your hearts.',
+      familyMessage: 'To my extended family, thank you for all the wonderful memories, holidays, and celebrations we\'ve shared. Please continue to support each other and stay close.',
+      friendsMessage: 'To my dear friends, thank you for the laughter, the shoulder to cry on, and all the adventures we\'ve had together. Keep my memory alive by continuing to live with joy and purpose.',
+      generalMessage: 'To all who knew me, thank you for being part of my journey. I hope I made a positive difference in your life as you did in mine. Live with kindness, purpose, and gratitude.',
+      specificInstructions: 'Please make sure David eats well and doesn\'t isolate himself. Encourage him to stay active with his hiking group. Sarah, please help your father with technology and finances. Michael, visit your dad regularly and help with house maintenance.'
+    };
+    localStorage.setItem('survivorNotesData', JSON.stringify(survivorNotesData));
+
+    // Section 11: Bucket List & Unfinished Business
+    const bucketListUnfinishedBusinessData = {
+      bucketListItems: [
+        {
+          item: 'Visit the Northern Lights in Iceland',
+          priority: 'High',
+          notes: 'Always dreamed of seeing the Aurora Borealis. Maybe David can go in my memory.',
+          status: 'Not completed'
+        },
+        {
+          item: 'Write a cookbook of family recipes',
+          priority: 'High',
+          notes: 'Started collecting recipes. Notes are in kitchen drawer. Sarah should finish this project.',
+          status: 'In progress'
+        },
+        {
+          item: 'Learn to paint watercolors',
+          priority: 'Medium',
+          notes: 'Bought supplies in 2023. They\'re in the art closet.',
+          status: 'Not started'
+        },
+        {
+          item: 'Take a cross-country train trip',
+          priority: 'Medium',
+          notes: 'Research Amtrak routes from San Francisco to New York.',
+          status: 'Research phase'
+        }
+      ],
+      unfinishedProjects: [
+        {
+          project: 'Family genealogy research',
+          description: 'Researching Thompson family history. Files on computer in "Family History" folder.',
+          priority: 'Medium',
+          whoShouldComplete: 'Sarah has shown interest in family history'
+        },
+        {
+          project: 'Garden renovation project',
+          description: 'Plans to redo the backyard garden. Sketches and plant lists in garden journal.',
+          priority: 'Low',
+          whoShouldComplete: 'David loves gardening - he may want to complete this'
+        },
+        {
+          project: 'Digital photo organization',
+          description: 'Organizing 20+ years of digital photos. Started using Google Photos for family albums.',
+          priority: 'High',
+          whoShouldComplete: 'Family project - everyone should contribute their photos'
+        }
+      ],
+      importantTasks: [
+        {
+          task: 'Update family recipe cards for children',
+          deadline: 'No deadline',
+          notes: 'Handwritten recipe cards are scattered. Need to compile into one collection.',
+          assigned: 'Sarah'
+        },
+        {
+          task: 'Organize important documents',
+          deadline: 'Ongoing',
+          notes: 'Some documents still need to be filed properly in the home safe.',
+          assigned: 'David with help from children'
+        }
+      ]
+    };
+    localStorage.setItem('bucketListUnfinishedBusinessData', JSON.stringify(bucketListUnfinishedBusinessData));
+
+    // Additional sections for completeness
+    localStorage.setItem('legalDocumentsData', JSON.stringify({
+      will: {
+        location: 'Home safe and attorney\'s office',
+        lastUpdated: '2023-06-15',
+        attorney: 'Robert K. Martinez, Esq.',
+        witnessesRequired: 2,
+        notarized: 'Yes'
+      },
+      trustDocuments: {
+        location: 'Attorney\'s office',
+        type: 'Revocable Living Trust',
+        trustee: 'David Thompson',
+        successorTrustee: 'Sarah Thompson-Garcia',
+        established: '2020-01-15'
+      },
+      powerOfAttorney: {
+        financialPOA: 'David Thompson',
+        medicalPOA: 'Sarah Thompson-Garcia',
+        location: 'Home safe and attorney\'s office',
+        effective: 'Upon incapacity'
+      },
+      advanceDirectives: {
+        livingWill: 'Yes - on file with doctor and hospital',
+        dnr: 'Yes - copy in home safe',
+        organDonation: 'Yes - registered with DMV'
+      }
+    }));
+
+    localStorage.setItem('personalMessagesData', JSON.stringify({
+      letterToSpouse: 'My dearest David, you have been my everything for over 30 years. Our love story has been the greatest joy of my life. Please remember all our happy times together and know that I want you to find peace and even happiness again. You have so much love still to give...',
+      letterToChildren: 'To my precious Sarah and Michael, watching you grow into the incredible adults you are today has been my greatest privilege. You have made me so proud with your kindness, intelligence, and strength. Take care of each other and your father...',
+      letterToGrandchildren: 'To my future grandchildren (if I\'m blessed to meet you), or to the grandchildren I hope to watch over from above, remember that your grandma/great-grandma loved you before you were even born. Be kind, be curious, and never stop learning...',
+      letterToFriends: 'To my wonderful friends, thank you for filling my life with laughter, support, and countless precious memories. Our friendships have enriched my life beyond measure...',
+      generalMessage: 'To everyone who was part of my life, thank you for the love, lessons, and memories. Live each day with purpose and gratitude. Be kind to one another. Make the world a little better than you found it.'
+    }));
+
+    localStorage.setItem('obituaryMemoryWishesData', JSON.stringify({
+      obituaryDraft: 'Margaret Elizabeth Thompson, 62, passed away peacefully on [date] surrounded by her loving family. Born in Oakland, California, Margaret dedicated her life to education, serving as an elementary school teacher for 35 years with the San Francisco Unified School District. She touched countless young lives and was beloved by students, parents, and colleagues alike...',
+      memorialPreferences: [
+        'Share photos and stories at the memorial service',
+        'Create a memory book for the family',
+        'Plant a tree in the community garden in my memory',
+        'Make donations to education-related charities'
+      ],
+      charityDonations: [
+        {
+          charity: 'American Cancer Society',
+          address: '250 Williams Street NW, Atlanta, GA 30303',
+          phone: '1-800-227-2345',
+          website: 'www.cancer.org'
+        },
+        {
+          charity: 'San Francisco Education Fund',
+          address: '555 Franklin Street, San Francisco, CA 94102',
+          phone: '(415) 241-6000',
+          website: 'www.sfeducationfund.org'
+        }
+      ],
+      socialMediaInstructions: 'Please create a memorial page on Facebook where friends and family can share memories and photos. Ask Sarah to manage this.'
+    }));
+
+    localStorage.setItem('transitionNotesData', JSON.stringify({
+      immediateInstructions: [
+        'Contact attorney Robert Martinez within 48 hours - (415) 555-0789',
+        'Notify employer/retirement system and cancel any work commitments',
+        'Contact life insurance companies - policy numbers in home safe',
+        'Contact banks and financial institutions',
+        'Arrange for pet care if I\'m hospitalized'
+      ],
+      weeklyTasks: [
+        'Pay monthly bills (most are on auto-pay, check calendar for exceptions)',
+        'Water the garden plants - especially the roses and herb garden',
+        'Check on elderly neighbor Mrs. Chen next door',
+        'Take Luna for vet checkup if due (check calendar)',
+        'Pick up mail and packages'
+      ],
+      monthlyTasks: [
+        'Review and pay credit card statements',
+        'Check investment account statements',
+        'Maintain garden seasonal care',
+        'Schedule home maintenance as needed'
+      ],
+      importantDates: [
+        'Wedding Anniversary: June 20th - This was always our special day',
+        'Sarah\'s Birthday: August 22nd - She loves surprise parties',
+        'Michael\'s Birthday: December 3rd - Usually celebrates with close friends',
+        'Annual family reunion: July 4th weekend at Lake Tahoe',
+        'Christmas traditions: We always host Christmas Eve dinner'
+      ],
+      hiddenItems: [
+        'Emergency cash ($500) in bedroom book "Pride and Prejudice" on nightstand',
+        'Spare house key under the garden gnome by the front steps',
+        'Important documents in fireproof safe - combination: 0315 (my birthday)',
+        'Jewelry in bedroom safe - combination: 0620 (wedding anniversary)',
+        'Extra credit cards in kitchen junk drawer in envelope marked "Emergency"'
+      ],
+      passwords: [
+        'Home WiFi: ThompsonFamily2020',
+        'Security system: 1962 (birth year)',
+        'Safe combinations listed above',
+        'All other passwords in LastPass - master password in safe'
+      ],
+      specialInstructions: 'Please make sure David doesn\'t try to handle everything alone. He\'ll want to, but he needs help and support. Sarah is great with paperwork and Michael is handy with technical things.'
+    }));
+
+    console.log('✅ ALL test data loaded successfully for Margaret Thompson!');
+    console.log('Data loaded for major sections using correct localStorage keys and data structures');
+    console.log('📋 Sections populated:');
+    console.log('  1. Funeral & Final Arrangements');
+    console.log('  2. Personal Information');
+    console.log('  3. Medical Information');
+    console.log('  4. Digital Life');
+    console.log('  5. Accounts & Memberships');
+    console.log('  6. Key Contacts');
+    console.log('  7. Finance & Business');
+    console.log('  8. Beneficiaries & Inheritance');
+    console.log('  9. Personal Property & Real Estate');
+    console.log(' 10. Pet Care & Survivor Notes');
+    console.log(' 11. Bucket List & Unfinished Business');
+    console.log(' 12. Legal Documents');
+    console.log(' 13. Personal Messages');
+    console.log(' 14. Obituary & Memory Wishes');
+    console.log(' 15. Transition Notes');
+    console.log('🎯 All forms should now show populated data!');
+    
+    return true;
+  } catch (error) {
+    console.error('❌ Error loading test data:', error);
+    return false;
+  }
+};
+
+  // Section 2: Medical Information
+  const medicalData = {
+    bloodType: 'O+',
+    allergies: 'Penicillin (severe), Shellfish (moderate), Seasonal pollen (mild)',
+    currentMedications: [
+      { name: 'Lisinopril', dosage: '10mg daily', purpose: 'Blood pressure' },
+      { name: 'Metformin', dosage: '500mg twice daily', purpose: 'Type 2 diabetes' },
+      { name: 'Vitamin D3', dosage: '1000 IU daily', purpose: 'Bone health' }
+    ],
+    medicalConditions: 'Type 2 diabetes (diagnosed 2018), Hypertension (diagnosed 2020), Osteoarthritis in knees',
+    surgicalHistory: 'Appendectomy (1985), Gallbladder removal (2010), Knee arthroscopy (2019)',
+    familyMedicalHistory: 'Father: Heart disease, diabetes; Mother: Alzheimer\'s disease; Siblings: Brother with high blood pressure',
+    primaryPhysician: {
+      name: 'Dr. Jennifer Chen',
+      phone: '604-555-1234',
+      address: 'Vancouver General Hospital Medical Clinic'
+    },
+    specialists: [
+      { name: 'Dr. Michael Rodriguez', specialty: 'Endocrinology', phone: '604-555-2345' },
+      { name: 'Dr. Lisa Park', specialty: 'Cardiology', phone: '604-555-3456' }
+    ],
+    mentalHealthPreferences: 'Prefer counseling and therapy over medication when possible. Have had positive experiences with cognitive behavioral therapy.',
+    advancedDirectives: 'Do not wish to be kept alive by artificial means if there is no reasonable hope of recovery. Prefer comfort care and pain management.'
+  };
+
+  // Section 3: Legal & Estate Information
+  const legalData = {
+    will: {
+      exists: true,
+      location: 'Safety deposit box at Royal Bank, copy with lawyer',
+      lastUpdated: '2023-01-15',
+      lawyer: 'Patricia Williams, Williams & Associates Law Firm',
+      lawyerContact: '604-555-4567'
+    },
+    powerOfAttorney: {
+      financial: 'Robert James Thompson (primary), Sarah Thompson Mitchell (secondary)',
+      medical: 'Robert James Thompson (primary), Dr. Jennifer Chen (medical proxy)'
+    },
+    trusts: 'Education trust fund established for grandchildren, managed by TD Trust Services',
+    estatePlanning: 'Estate to be divided equally among three children after spouse inheritance. Specific bequests: antique piano to Sarah, coin collection to Michael, jewelry to Emma.',
+    guardianship: 'N/A - all children are adults',
+    businessInterests: 'None currently active'
+  };
+
+  // Section 4: Financial Information
+  const financeData = {
+    bankAccounts: [
+      { bank: 'Royal Bank of Canada', type: 'Checking', accountNumber: '****1234', contact: '1-800-RBC-BANK' },
+      { bank: 'Royal Bank of Canada', type: 'Savings', accountNumber: '****5678', contact: '1-800-RBC-BANK' },
+      { bank: 'Tangerine Bank', type: 'High Interest Savings', accountNumber: '****9012', contact: '1-888-826-4374' }
+    ],
+    investments: [
+      { type: 'RRSP', institution: 'Vanguard Canada', accountNumber: '****3456', advisor: 'John Smith, 604-555-5678' },
+      { type: 'TFSA', institution: 'TD Direct Investing', accountNumber: '****7890', advisor: 'Self-directed' }
+    ],
+    insurance: [
+      { type: 'Life Insurance', company: 'Sun Life', policyNumber: '****1111', beneficiary: 'Robert Thompson', amount: '$500,000' },
+      { type: 'Home Insurance', company: 'ICBC', policyNumber: '****2222', renewalDate: '2024-06-01' },
+      { type: 'Auto Insurance', company: 'ICBC', policyNumber: '****3333', renewalDate: '2024-04-15' }
+    ],
+    debts: [
+      { type: 'Mortgage', lender: 'RBC Royal Bank', balance: '$125,000', monthlyPayment: '$1,850' },
+      { type: 'Credit Card', lender: 'VISA', balance: '$2,450', monthlyPayment: '$250 minimum' }
+    ],
+    financialAdvisor: {
+      name: 'Michelle Chen',
+      company: 'Wealth Management Solutions',
+      phone: '604-555-6789',
+      email: 'michelle.chen@wms.com'
+    }
+  };
+
+  // Section 5: Digital Life & Technology
+  const digitalData = {
+    devices: [
+      { type: 'iPhone 14', passcode: 'TouchID enabled', icloudAccount: 'maggie.thompson@email.com' },
+      { type: 'MacBook Air', password: 'Stored in password manager', backups: 'Time Machine to external drive' },
+      { type: 'iPad', passcode: 'Same as iPhone', syncedWith: 'iPhone via iCloud' }
+    ],
+    onlineAccounts: [
+      { platform: 'Facebook', username: 'maggie.thompson.65', password: 'Stored in 1Password', instructions: 'Convert to memorial account' },
+      { platform: 'Gmail', username: 'maggie.thompson@email.com', password: 'Stored in 1Password', instructions: 'Download photos and important emails' },
+      { platform: 'Banking', username: 'Online banking accounts', password: 'Stored in 1Password', instructions: 'Transfer to spouse immediately' }
+    ],
+    digitalAssets: [
+      { type: 'Photo Library', location: 'iCloud Photos, Google Photos backup', value: 'Priceless family memories' },
+      { type: 'Music Library', location: 'iTunes, Spotify playlists', value: 'Personal enjoyment' },
+      { type: 'Documents', location: 'iCloud Drive, Dropbox', value: 'Important family documents and recipes' }
+    ],
+    passwordManager: '1Password - master password known by Robert',
+    digitalWishes: 'Please preserve all family photos and videos. Delete browsing history and personal messages. Keep family recipes and travel journals.',
+    cryptocurrencyInfo: 'Small Bitcoin holding in Coinbase account - information in password manager'
+  };
+
+  // Save all data to localStorage
+  localStorage.setItem('personalInformation', JSON.stringify(personalData));
+  localStorage.setItem('medicalInformation', JSON.stringify(medicalData));
+  localStorage.setItem('legalEstate', JSON.stringify(legalData));
+  localStorage.setItem('financeBusiness', JSON.stringify(financeData));
+  localStorage.setItem('digitalLife', JSON.stringify(digitalData));
+
+  // Section 6: Children & Dependents
+  const childrenData = {
+    children: [
+      {
+        fullName: 'Sarah Margaret Thompson Mitchell',
+        dateOfBirth: '1992-08-14',
+        relationship: 'Daughter',
+        address: '89 College Street, Toronto, ON M5S 3M2',
+        phone: '416-555-0234',
+        email: 'sarah.mitchell@email.com',
+        occupation: 'Pediatric Nurse',
+        spouse: 'David Mitchell',
+        children: 'Expecting first child in 2024',
+        specialNeeds: 'None',
+        guardianshipArrangements: 'N/A - Adult',
+        financialSupport: 'Independent',
+        personalNotes: 'My eldest, so responsible and caring. Following in my footsteps with her love of helping others.'
+      },
+      {
+        fullName: 'Michael Robert Thompson',
+        dateOfBirth: '1995-11-03',
+        relationship: 'Son',
+        address: '2456 Pine Avenue, Vancouver, BC V6J 4R5',
+        phone: '604-555-0567',
+        email: 'michael.thompson@email.com',
+        occupation: 'Software Developer',
+        spouse: 'Single',
+        children: 'None',
+        specialNeeds: 'None',
+        guardianshipArrangements: 'N/A - Adult',
+        financialSupport: 'Independent',
+        personalNotes: 'My tech wizard! Always helping us with computer problems. Creative and intelligent.'
+      },
+      {
+        fullName: 'Emma Rose Thompson',
+        dateOfBirth: '1998-05-22',
+        relationship: 'Daughter',
+        address: '1425 Oak Street, Vancouver, BC V6H 2M5',
+        phone: '604-555-0890',
+        email: 'emma.thompson@email.com',
+        occupation: 'University Student - Environmental Science',
+        spouse: 'Single',
+        children: 'None',
+        specialNeeds: 'None',
+        guardianshipArrangements: 'N/A - Adult',
+        financialSupport: 'Partial support for education',
+        personalNotes: 'My youngest, passionate about saving the environment. Still lives at home while studying.'
+      }
+    ],
+    dependents: [],
+    guardianshipWishes: 'All children are adults. In case of mutual tragedy with Robert, Sarah should be executor and handle family affairs.',
+    educationPlanning: 'Education trust fund established for future grandchildren. Emma\'s education supported until graduation.',
+    specialInstructions: 'Each child has their own special box of mementos in the attic. Sarah gets grandma\'s china, Michael gets dad\'s tools, Emma gets my gardening equipment.'
+  };
+
+  localStorage.setItem('childrenDependents', JSON.stringify(childrenData));
+
+  // Section 7: Beneficiaries & Inheritance
+  const beneficiariesData = {
+    primaryBeneficiaries: [
+      {
+        name: 'Robert James Thompson',
+        relationship: 'Spouse',
+        percentage: '50%',
+        address: '1425 Oak Street, Vancouver, BC V6H 2M5',
+        phone: '604-555-0456',
+        email: 'robert.thompson@email.com',
+        specialInstructions: 'Primary beneficiary for all accounts and property. House to remain his for life.'
+      },
+      {
+        name: 'Sarah Thompson Mitchell',
+        relationship: 'Daughter',
+        percentage: '16.67%',
+        address: '89 College Street, Toronto, ON M5S 3M2',
+        phone: '416-555-0234',
+        email: 'sarah.mitchell@email.com',
+        specialInstructions: 'To receive grandmother\'s china set and piano. Education trust for her children.'
+      },
+      {
+        name: 'Michael Robert Thompson',
+        relationship: 'Son',
+        percentage: '16.67%',
+        address: '2456 Pine Avenue, Vancouver, BC V6J 4R5',
+        phone: '604-555-0567',
+        email: 'michael.thompson@email.com',
+        specialInstructions: 'To receive coin collection and father\'s tools. Technology equipment to go to him.'
+      },
+      {
+        name: 'Emma Rose Thompson',
+        relationship: 'Daughter',
+        percentage: '16.67%',
+        address: '1425 Oak Street, Vancouver, BC V6H 2M5',
+        phone: '604-555-0890',
+        email: 'emma.thompson@email.com',
+        specialInstructions: 'To receive jewelry collection and gardening equipment. Environmental books collection.'
+      }
+    ],
+    contingentBeneficiaries: [
+      {
+        name: 'Canadian Cancer Society',
+        relationship: 'Charity',
+        percentage: 'Remainder if no family survivors',
+        address: '55 St. Clair Avenue West, Toronto, ON',
+        phone: '1-888-939-3333',
+        specialInstructions: 'In memory of my father who battled cancer courageously.'
+      }
+    ],
+    inheritanceInstructions: 'House and primary assets to spouse first. Upon his passing, equal division among children. Sentimental items as specified. Any remaining funds after family needs met to go to cancer research.',
+    taxPlanning: 'Consult with accountant Patricia Williams for tax implications. RRSP to be transferred to spouse first to defer taxes.'
+  };
+
+  // Section 8: Personal Property & Possessions
+  const personalPropertyData = {
+    jewelry: [
+      { item: 'Wedding ring set', value: '$5,000', recipient: 'Robert initially, then Emma', location: 'Bedroom jewelry box', sentimentalValue: 'Worn every day for 34 years' },
+      { item: 'Grandmother\'s pearl necklace', value: '$2,000', recipient: 'Sarah', location: 'Safety deposit box', sentimentalValue: 'Passed down through 4 generations' },
+      { item: 'Sapphire earrings', value: '$1,500', recipient: 'Emma', location: 'Bedroom jewelry box', sentimentalValue: 'Anniversary gift from Robert' }
+    ],
+    artwork: [
+      { item: 'Family portrait painting', value: '$800', recipient: 'Sarah', location: 'Living room above fireplace', sentimentalValue: 'Commissioned for our 25th anniversary' },
+      { item: 'Landscape paintings collection', value: '$1,200', recipient: 'Michael', location: 'Various rooms', sentimentalValue: 'Collected during our travels' }
+    ],
+    collections: [
+      { item: 'Antique teacup collection', value: '$2,500', recipient: 'Sarah', location: 'Dining room china cabinet', sentimentalValue: 'Started by my mother, continued by me' },
+      { item: 'Vintage coin collection', value: '$3,000', recipient: 'Michael', location: 'Study desk drawer', sentimentalValue: 'Started when Michael was 10, we collected together' },
+      { item: 'Garden tools and equipment', value: '$800', recipient: 'Emma', location: 'Garden shed', sentimentalValue: 'My passion for 30 years, hope Emma continues gardening' }
+    ],
+    furniture: [
+      { item: 'Antique piano', value: '$8,000', recipient: 'Sarah', location: 'Living room', sentimentalValue: 'Sarah learned to play on this piano, her grandmother\'s before that' },
+      { item: 'Grandfather clock', value: '$2,000', recipient: 'Michael', location: 'Front hall', sentimentalValue: 'Wedding gift from Robert\'s parents' },
+      { item: 'Dining room set', value: '$3,500', recipient: 'Emma', location: 'Dining room', sentimentalValue: 'Where we had family dinners every Sunday' }
+    ],
+    personalItems: [
+      { item: 'Recipe collection and cookbooks', value: 'Priceless', recipient: 'All children to share copies', location: 'Kitchen', sentimentalValue: 'Family recipes going back generations' },
+      { item: 'Photo albums and scrapbooks', value: 'Priceless', recipient: 'All children equally', location: 'Study closet', sentimentalValue: 'Complete family history documented' },
+      { item: 'Gardening journals', value: 'Personal', recipient: 'Emma', location: 'Garden shed', sentimentalValue: '20 years of garden planning and plant records' }
+    ]
+  };
+
+  // Section 9: Key Contacts & Relationships
+  const keyContactsData = {
+    family: [
+      { name: 'Robert James Thompson', relationship: 'Spouse', phone: '604-555-0456', email: 'robert.thompson@email.com', address: '1425 Oak Street, Vancouver, BC', importance: 'Primary contact, power of attorney' },
+      { name: 'Sarah Thompson Mitchell', relationship: 'Daughter', phone: '416-555-0234', email: 'sarah.mitchell@email.com', address: '89 College Street, Toronto, ON', importance: 'Secondary emergency contact, executor backup' },
+      { name: 'Mary Thompson', relationship: 'Sister-in-law', phone: '604-555-1122', email: 'mary.t@email.com', address: '3456 Elm Street, Vancouver, BC', importance: 'Close family friend, backup support for Robert' }
+    ],
+    friends: [
+      { name: 'Janet Williams', relationship: 'Best friend', phone: '604-555-2233', email: 'janet.williams@email.com', address: '789 Maple Ave, Vancouver, BC', importance: '40-year friendship, knows all family stories' },
+      { name: 'Eleanor Chen', relationship: 'Neighbor and friend', phone: '604-555-3344', email: 'eleanor.c@email.com', address: '1427 Oak Street, Vancouver, BC', importance: 'Daily walking partner, garden club together' },
+      { name: 'Patricia Kowalski', relationship: 'Work colleague', phone: '604-555-4455', email: 'pat.k@school.ca', address: '456 Pine Street, Vancouver, BC', importance: 'Teaching mentor, retirement party planner' }
+    ],
+    professionals: [
+      { name: 'Dr. Jennifer Chen', relationship: 'Family doctor', phone: '604-555-1234', email: 'jchen@vgh.ca', address: 'VGH Medical Clinic', importance: 'Primary healthcare, knows full medical history' },
+      { name: 'Patricia Williams', relationship: 'Lawyer', phone: '604-555-4567', email: 'pwilliams@law.com', address: 'Williams & Associates', importance: 'Estate planning, will execution' },
+      { name: 'Michelle Chen', relationship: 'Financial advisor', phone: '604-555-6789', email: 'michelle.chen@wms.com', address: 'Wealth Management Solutions', importance: 'Investment management, retirement planning' }
+    ],
+    community: [
+      { name: 'Father Michael O\'Brien', relationship: 'Parish priest', phone: '604-555-5566', email: 'mobrien@stpatricks.org', address: 'St. Patrick\'s Church', importance: 'Spiritual guidance, funeral arrangements' },
+      { name: 'Linda Foster', relationship: 'Garden club president', phone: '604-555-6677', email: 'linda.foster@gardenclub.org', address: '234 Rose Street, Vancouver, BC', importance: 'Community involvement, shared passion for gardening' }
+    ]
+  };
+
+  // Section 10: Funeral & Final Arrangements
+  const funeralData = {
+    funeralHome: {
+      name: 'MacKenzie Funeral Home',
+      contact: 'David MacKenzie',
+      phone: '604-555-7890',
+      address: '123 Memorial Drive, Vancouver, BC',
+      prePaid: true,
+      accountNumber: 'MFH-2023-1145'
+    },
+    servicePreferences: {
+      type: 'Traditional funeral service',
+      location: 'St. Patrick\'s Catholic Church',
+      officiant: 'Father Michael O\'Brien',
+      music: ['Ave Maria', 'How Great Thou Art', 'The Lord is My Shepherd'],
+      readings: ['Psalm 23', 'John 14:1-6', 'Romans 8:38-39'],
+      speakers: ['Sarah (eulogy)', 'Robert (memories)', 'Janet Williams (friendship)'],
+      specialRequests: 'Please have a memory table with photo albums. Ask guests to sign the memory book.'
+    },
+    burialPreferences: {
+      type: 'Burial',
+      cemetery: 'Mountain View Cemetery',
+      plot: 'Section C, Plot 45 (pre-purchased)',
+      headstone: 'Simple granite with space for Robert later',
+      inscription: 'Beloved wife, mother, teacher - "She touched many lives with love"'
+    },
+    memorialPreferences: {
+      inLieuOfFlowers: 'Donations to Canadian Cancer Society or local food bank',
+      reception: 'Church hall after service - simple lunch, stories and sharing',
+      memorialKeepsakes: 'Small potted plants from my garden for each guest',
+      photoDisplay: 'Poster boards with family photos throughout the years'
+    }
+  };
+
+  // Continue saving data...
+  localStorage.setItem('beneficiariesInheritance', JSON.stringify(beneficiariesData));
+  localStorage.setItem('personalProperty', JSON.stringify(personalPropertyData));
+  localStorage.setItem('keyContacts', JSON.stringify(keyContactsData));
+  localStorage.setItem('funeralArrangements', JSON.stringify(funeralData));
+
+  // Section 11: Accounts & Memberships
+  const accountsData = {
+    subscriptions: [
+      { service: 'Netflix', account: 'maggie.thompson@email.com', password: 'In 1Password', cost: '$16.99/month', autoRenew: true, action: 'Cancel after 3 months' },
+      { service: 'Spotify Premium', account: 'maggie.thompson@email.com', password: 'In 1Password', cost: '$9.99/month', autoRenew: true, action: 'Transfer to Robert' },
+      { service: 'Vancouver Sun Digital', account: 'maggie.thompson@email.com', password: 'In 1Password', cost: '$12.99/month', autoRenew: true, action: 'Cancel immediately' }
+    ],
+    memberships: [
+      { organization: 'Vancouver Garden Club', memberNumber: 'VGC-2456', contact: 'Linda Foster 604-555-6677', dues: '$45/year', benefits: 'Monthly meetings, garden tours', action: 'Transfer to Emma if interested' },
+      { organization: 'St. Patrick\'s Parish', memberNumber: 'SP-1990-Thompson', contact: 'Father O\'Brien 604-555-5566', dues: 'Weekly donations', benefits: 'Spiritual community', action: 'Continue family membership' },
+      { organization: 'RRTO (Retired Teachers Ontario)', memberNumber: 'RRTO-45632', contact: '1-800-361-9888', dues: '$75/year', benefits: 'Pension support, health benefits', action: 'Contact about survivor benefits for Robert' }
+    ],
+    loyaltyPrograms: [
+      { program: 'Aeroplan', account: '987654321', password: 'In 1Password', points: '125,000 points', value: '$1,250', action: 'Transfer to Sarah for family travel' },
+      { program: 'PC Optimum', account: '456-789-123', password: 'In 1Password', points: '89,000 points', value: '$89', action: 'Use points for groceries, then close' },
+      { program: 'Air Miles', account: '987-654-321', password: 'In 1Password', points: '1,200 miles', value: '$120', action: 'Redeem for gift cards for family' }
+    ]
+  };
+
+  // Section 12: Pets & Animal Care
+  const petsData = {
+    currentPets: [
+      {
+        name: 'Whiskers',
+        type: 'Cat',
+        breed: 'Tabby Mix',
+        age: '8 years',
+        veterinarian: 'Dr. Sarah Kim, Oak Street Animal Hospital, 604-555-3333',
+        medicalInfo: 'Up to date on vaccinations, takes thyroid medication daily',
+        feeding: 'Dry food twice daily, wet food as treat. Loves tuna.',
+        personality: 'Gentle, loves to sit in sunny windows, afraid of loud noises',
+        careInstructions: 'Needs daily brushing, prefers quiet environments',
+        preferredCaregiver: 'Emma (first choice), Michael (second choice)',
+        backup: 'Vancouver Animal Shelter if family cannot take'
+      },
+      {
+        name: 'Buddy',
+        type: 'Dog',
+        breed: 'Golden Retriever',
+        age: '5 years',
+        veterinarian: 'Dr. Sarah Kim, Oak Street Animal Hospital, 604-555-3333',
+        medicalInfo: 'Healthy, vaccinated, microchipped #982000123456',
+        feeding: 'High-quality dry food twice daily, loves carrots as treats',
+        personality: 'Friendly, energetic, loves walks and playing fetch',
+        careInstructions: 'Needs daily walk, loves the dog park on weekends',
+        preferredCaregiver: 'Robert (first choice), Michael (second choice)',
+        backup: 'Golden Retriever Rescue if family cannot take'
+      }
+    ],
+    petSupplies: {
+      location: 'Utility room and garage',
+      items: 'Food bowls, leashes, toys, carriers, grooming supplies, medications',
+      disposal: 'Donate to animal shelter along with remaining food'
+    },
+    veterinaryRecords: {
+      location: 'Filing cabinet in study, also digital copies in email',
+      contact: 'Dr. Sarah Kim, Oak Street Animal Hospital, 604-555-3333'
+    }
+  };
+
+  // Section 13: Short Letters & Messages
+  const shortLettersData = {
+    letters: [
+      {
+        recipient: 'Robert',
+        title: 'To My Beloved Husband',
+        content: 'My dearest Robert,\n\nThank you for 34 wonderful years together. You have been my rock, my best friend, and my greatest love. Please remember to take care of yourself, spend time with the children, and know that my love for you will never end.\n\nKeep gardening - the roses need you! And please don\'t live on takeout forever.\n\nWith all my love,\nMaggie',
+        dateWritten: '2024-01-15',
+        instructions: 'Give to Robert immediately'
+      },
+      {
+        recipient: 'Sarah',
+        title: 'To My Responsible Daughter',
+        content: 'Sweet Sarah,\n\nYou have always been my little helper, even as an adult. Thank you for your caring heart and sense of responsibility. Take care of your father, but don\'t forget to live your own life.\n\nThe piano is yours - I hope your children will learn to play it someday. Remember that being strong doesn\'t mean carrying everyone\'s burdens.\n\nLove always,\nMom',
+        dateWritten: '2024-01-15',
+        instructions: 'Give to Sarah at appropriate time'
+      },
+      {
+        recipient: 'Michael',
+        title: 'To My Creative Son',
+        content: 'Dear Michael,\n\nYour creativity and intelligence have always amazed me. Don\'t be afraid to take risks and follow your dreams. The world needs more people like you who think outside the box.\n\nDad\'s tools are yours now - I know you\'ll use them well. Keep creating, keep questioning, keep being wonderful you.\n\nProud of you always,\nMom',
+        dateWritten: '2024-01-15',
+        instructions: 'Give to Michael when he\'s ready'
+      },
+      {
+        recipient: 'Emma',
+        title: 'To My Environmental Warrior',
+        content: 'Dearest Emma,\n\nYour passion for protecting our planet gives me hope for the future. Keep fighting the good fight, but remember to enjoy the beautiful world you\'re working to save.\n\nThe garden is yours now - all my journals and tools. I hope you\'ll continue to grow beautiful things. Maybe add some native plants for the bees!\n\nGreen hugs,\nMom',
+        dateWritten: '2024-01-15',
+        instructions: 'Give to Emma after graduation'
+      }
+    ]
+  };
+
+  // Complete the remaining sections...
+  localStorage.setItem('accountsMemberships', JSON.stringify(accountsData));
+  localStorage.setItem('petsAnimalCare', JSON.stringify(petsData));
+  localStorage.setItem('shortLetters', JSON.stringify(shortLettersData));
+
+  // Section 14: Final Wishes & Legacy Planning
+  const finalWishesData = {
+    philosophyOfLife: 'I believe that life is about love, learning, and leaving the world a little better than you found it. Family comes first, but we also have a responsibility to our community and our planet.',
+    lifeAchievements: [
+      'Raised three wonderful children who are kind, capable adults',
+      'Taught elementary school for 35 years, touching hundreds of young lives',
+      'Built a loving marriage that lasted over three decades',
+      'Created a beautiful garden that brought joy to many',
+      'Volunteered at the local food bank for 15 years'
+    ],
+    hopesForLovedOnes: 'I hope my children will stay close to each other and to their father. I hope they will find careers that fulfill them and partners who cherish them. I hope they will teach their children about kindness and courage.',
+    valuesAndWisdom: 'Never go to bed angry. Say "I love you" often. Take time to appreciate small beautiful things. Help others when you can. Read books, tend gardens, and create memories.',
+    legacyWishes: [
+      'Establish a small scholarship fund for students entering teaching',
+      'Continue the family tradition of Sunday dinners',
+      'Keep the garden blooming - it brings the neighborhood together',
+      'Donate books to the local library in my memory',
+      'Support environmental causes - Emma will guide you'
+    ],
+    spiritualBeliefs: 'I believe in God, in love that transcends death, and in the goodness of people. I hope to be remembered for kindness rather than perfection.',
+    finalThoughts: 'Thank you for a life filled with love, laughter, and purpose. Take care of each other, and remember that I am always with you in your hearts.'
+  };
+
+  // Section 15: Bucket List & Unfinished Business
+  const bucketListData = {
+    completedGoals: [
+      'Travel to Ireland with the family ✓',
+      'See all three children graduate ✓',
+      'Learn to grow prize-winning roses ✓',
+      'Volunteer at the food bank ✓',
+      'Take Robert on a surprise trip for our 30th anniversary ✓'
+    ],
+    unfinishedGoals: [
+      {
+        goal: 'Write a family history book',
+        status: 'Started - notes and photos in study closet',
+        instructions: 'Sarah, please finish this project. Most of the research is done.',
+        importance: 'High - for future generations'
+      },
+      {
+        goal: 'Learn to paint watercolors',
+        status: 'Supplies purchased, never started',
+        instructions: 'Donate art supplies to community center',
+        importance: 'Low - personal interest'
+      },
+      {
+        goal: 'Visit Michael in his new apartment',
+        status: 'Planning to go next month',
+        instructions: 'Robert, please visit Michael often. He needs family support.',
+        importance: 'High - family connection'
+      },
+      {
+        goal: 'Organize all family photos digitally',
+        status: 'About 30% complete',
+        instructions: 'Files on computer, ask Michael to help finish organizing',
+        importance: 'High - family memories'
+      }
+    ],
+    projectsToComplete: [
+      {
+        project: 'Recipe book for the children',
+        status: 'All recipes collected, needs typing and organization',
+        location: 'Recipe box in kitchen',
+        instructions: 'Please complete and give each child a copy',
+        timeline: 'Within 6 months'
+      },
+      {
+        project: 'Garden succession planning',
+        status: 'Need to teach Emma about seasonal care',
+        location: 'Garden journals have all the information',
+        instructions: 'Emma, read the journals - everything you need is there',
+        timeline: 'Before next growing season'
+      }
+    ],
+    wishesForOthers: [
+      'I hope Robert will take that cooking class he\'s been talking about',
+      'I hope Sarah will take time for herself and not worry about everyone else so much',
+      'I hope Michael will find someone special to share his life with',
+      'I hope Emma will travel and see the world she\'s working to protect'
+    ]
+  };
+
+  // Section 16: Transition Notes & Final Instructions
+  const transitionNotesData = {
+    immediateActions: [
+      {
+        task: 'Contact family members',
+        priority: 'Immediate',
+        responsible: 'Robert',
+        details: 'Call Sarah first, then Michael and Emma. Use the contact list in this document.',
+        timeline: 'Within 2 hours'
+      },
+      {
+        task: 'Contact funeral home',
+        priority: 'Immediate',
+        responsible: 'Robert or Sarah',
+        details: 'MacKenzie Funeral Home - arrangements are pre-paid, ask for David MacKenzie',
+        timeline: 'Within 4 hours'
+      },
+      {
+        task: 'Secure the house and pets',
+        priority: 'Immediate',
+        responsible: 'Robert',
+        details: 'Make sure Whiskers and Buddy are safe and fed. Ask neighbor Eleanor to help if needed.',
+        timeline: 'Immediately'
+      }
+    ],
+    weekOneActions: [
+      {
+        task: 'Contact lawyer and financial advisor',
+        priority: 'High',
+        responsible: 'Robert with Sarah\'s help',
+        details: 'Patricia Williams (lawyer) and Michelle Chen (financial advisor) - they have copies of important documents',
+        timeline: 'Within 3 days'
+      },
+      {
+        task: 'Notify employers and organizations',
+        priority: 'Medium',
+        responsible: 'Sarah',
+        details: 'Contact school district, garden club, church, and any volunteer organizations',
+        timeline: 'Within 1 week'
+      },
+      {
+        task: 'Care for pets',
+        priority: 'High',
+        responsible: 'Robert with family help',
+        details: 'Ensure pets are fed and comfortable. Make long-term care decisions based on preferences listed.',
+        timeline: 'Ongoing'
+      }
+    ],
+    monthOneActions: [
+      {
+        task: 'Handle financial accounts',
+        priority: 'High',
+        responsible: 'Robert with Michelle Chen',
+        details: 'Transfer accounts, notify banks and investment companies, file insurance claims',
+        timeline: 'Within 30 days'
+      },
+      {
+        task: 'Sort personal belongings',
+        priority: 'Medium',
+        responsible: 'Family together',
+        details: 'Use the personal property list as a guide. Take time with this - don\'t rush.',
+        timeline: 'When family is ready'
+      }
+    ],
+    importantReminders: [
+      'Take time to grieve - there\'s no rush on most things',
+      'Ask for help from friends and community',
+      'Keep family traditions alive, especially Sunday dinners',
+      'Remember that I want you all to live full, happy lives',
+      'Check this document periodically - I may have updated it'
+    ],
+    supportResources: [
+      {
+        resource: 'Grief counseling',
+        contact: 'Vancouver Family Services - 604-555-9999',
+        details: 'Professional grief support, individual and family counseling'
+      },
+      {
+        resource: 'Financial planning',
+        contact: 'Michelle Chen - 604-555-6789',
+        details: 'Continue working with Michelle for financial guidance and planning'
+      },
+      {
+        resource: 'Legal support',
+        contact: 'Patricia Williams - 604-555-4567',
+        details: 'Estate execution, legal questions, document updates'
+      }
+    ],
+    finalMessage: 'Remember that this document is my gift of love to you. It\'s meant to help, not overwhelm. Take what you need, when you need it. Most importantly, take care of each other and remember the joy we shared together.'
+  };
+
+  // Save the final sections
+  localStorage.setItem('finalWishesLegacy', JSON.stringify(finalWishesData));
+  localStorage.setItem('bucketListUnfinished', JSON.stringify(bucketListData));
+  localStorage.setItem('transitionNotes', JSON.stringify(transitionNotesData));
+
+  console.log('✅ All test data loaded successfully! Ready for PDF generation testing.');
+  
+  return {
+    success: true,
+    sectionsLoaded: [
+      'Personal Information',
+      'Medical Information', 
+      'Legal & Estate',
+      'Finance & Business',
+      'Digital Life',
+      'Children & Dependents',
+      'Beneficiaries & Inheritance',
+      'Personal Property & Possessions',
+      'Key Contacts & Relationships',
+      'Funeral & Final Arrangements',
+      'Accounts & Memberships',
+      'Pets & Animal Care',
+      'Short Letters & Messages',
+      'Final Wishes & Legacy Planning',
+      'Bucket List & Unfinished Business',
+      'Transition Notes & Final Instructions'
+    ]
+  };
+};
+
+// Helper function to clear all test data
+export const clearAllTestData = () => {
+  const keys = [
+    'personalInformation',
+    'medicalInformation',
+    'legalEstate',
+    'financeBusiness',
+    'digitalLife',
+    'childrenDependents',
+    'beneficiariesInheritance',
+    'personalProperty',
+    'keyContacts',
+    'funeralArrangements',
+    'accountsMemberships',
+    'petsAnimalCare',
+    'shortLetters',
+    'finalWishesLegacy',
+    'bucketListUnfinished',
+    'transitionNotes'
+  ];
+  
+  keys.forEach(key => localStorage.removeItem(key));
+  console.log('🗑️ All test data cleared from localStorage');
+};

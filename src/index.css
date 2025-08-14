@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Safari-specific fixes */
+@supports (-webkit-appearance: none) {
+  /* Safari-specific styles */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Fix for Safari transform issues */
+  .transform {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+/* Custom slider styles for audio player */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-track {
+  background: #e5e7eb;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #3b82f6;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #2563eb;
+}
+
+.slider::-moz-range-track {
+  background: #e5e7eb;
+  height: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+.slider::-moz-range-thumb {
+  background: #3b82f6;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: #2563eb;
+}
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 210 22% 22%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 22% 22%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 22% 22%;
+
+    --primary: 43 74% 59%; /* SkillBinder Yellow #E3B549 */
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 220 9% 69%;
+    --secondary-foreground: 210 22% 22%;
+
+    --muted: 210 20% 98%;
+    --muted-foreground: 220 9% 45%;
+
+    --accent: 203 48% 19%; /* SkillBinder Blue #17394B */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 75%;
+    --input: 220 13% 75%;
+    --ring: 43 74% 59%; /* SkillBinder Yellow for focus rings */
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 22% 22%;
+    --sidebar-primary: 43 74% 59%; /* SkillBinder Yellow */
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 210 20% 98%;
+    --sidebar-accent-foreground: 210 22% 22%;
+    --sidebar-border: 220 13% 75%;
+    --sidebar-ring: 43 74% 59%;
+  }
+
+  .dark {
+    --background: 210 20% 98%;
+    --foreground: 210 22% 22%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 22% 22%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 22% 22%;
+
+    --primary: 43 74% 66%;
+    --primary-foreground: 210 22% 22%;
+
+    --secondary: 220 9% 69%;
+    --secondary-foreground: 210 22% 22%;
+
+    --muted: 210 20% 98%;
+    --muted-foreground: 220 9% 45%;
+
+    --accent: 43 74% 66%;
+    --accent-foreground: 210 22% 22%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 75%;
+    --input: 220 13% 75%;
+    --ring: 43 74% 66%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 22% 22%;
+    --sidebar-primary: 43 74% 66%;
+    --sidebar-primary-foreground: 210 22% 22%;
+    --sidebar-accent: 210 20% 98%;
+    --sidebar-accent-foreground: 210 22% 22%;
+    --sidebar-border: 220 13% 75%;
+    --sidebar-ring: 43 74% 66%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased leading-relaxed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold leading-tight;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  p {
+    @apply text-lg leading-relaxed;
+  }
+
+  .text-subtext {
+    @apply text-sm text-muted-foreground;
+  }
+
+  pre, code {
+    @apply font-mono;
+  }
+}
+
+@layer components {
+  .neumorphic-card {
+    @apply bg-white rounded-xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05),0_1px_3px_0_rgba(0,0,0,0.12),0_1px_2px_0_rgba(0,0,0,0.24)] border border-border/50;
+  }
+  
+  .neumorphic-button {
+    @apply bg-white rounded-lg shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05),0_1px_3px_0_rgba(0,0,0,0.12)] border border-border/50 transition-all duration-200 hover:shadow-[inset_0_1px_0_0_rgba(255,255,255,0.1),0_2px_6px_0_rgba(0,0,0,0.15)] active:shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.1)];
+  }
+  
+  .neumorphic-input {
+    @apply bg-white rounded-lg shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.06)] border border-border/50 focus:shadow-[inset_0_2px_4px_0_rgba(0,0,0,0.06),0_0_0_2px_rgba(224,184,76,0.2)] transition-all duration-200;
+  }
+  
+  .flat-panel {
+    @apply bg-white rounded-lg border border-border/30;
+  }
+  
+  .progress-step {
+    @apply w-8 h-8 rounded-full border-2 border-border flex items-center justify-center text-sm font-medium transition-all duration-200;
+  }
+  
+  .progress-step.active {
+    @apply bg-primary text-primary-foreground border-primary;
+  }
+  
+  .progress-step.completed {
+    @apply bg-green-500 text-white border-green-500;
+  }
+  
+  /* Hide audio elements during PDF generation */
+  @media print {
+    .audio-player,
+    [data-audio-player],
+    audio {
+      display: none !important;
+    }
+  }
+
+  /* SkillBinder Button Variants */
+  .skillbinder {
+    background-color: #17394B;
+    border-color: #17394B;
+  }
+  
+  .skillbinder:hover {
+    background-color: #0f2a36;
+    border-color: #0f2a36;
+  }
+  
+  .skillbinder_yellow {
+    background-color: #E3B549;
+    border-color: #E3B549;
+  }
+  
+  .skillbinder_yellow:hover {
+    background-color: #d9a332;
+    border-color: #d9a332;
+  }
+  
+  .skillbinder_outline {
+    color: #17394B;
+    border-color: #17394B;
+  }
+  
+  .skillbinder_outline:hover {
+    background-color: #f8f9fa;
+    color: #0f2a36;
+    border-color: #0f2a36;
+  }
+
+  /* SkillBinder Text Color Classes */
+  .text-skillbinder-yellow {
+    color: #E3B549;
+  }
+
+  .text-skillbinder-blue {
+    color: #17394B;
+  }
+
+  /* SkillBinder Background Color Classes */
+  .bg-skillbinder-yellow {
+    background-color: #E3B549;
+  }
+
+  .bg-skillbinder-blue {
+    background-color: #17394B;
+  }
+
+  .bg-skillbinder-yellow\/10 {
+    background-color: rgba(227, 181, 73, 0.1);
+  }
+
+  .bg-skillbinder-blue\/10 {
+    background-color: rgba(23, 57, 75, 0.1);
+  }
+}
+
+.markdown-editor {
+  @apply font-mono text-base leading-relaxed;
+}
+
+.markdown-preview {
+  @apply prose max-w-none prose-blue;
+}
+
+.markdown-preview pre {
+  @apply bg-secondary p-4 rounded-md overflow-x-auto;
+}
+
+.markdown-preview code {
+  @apply text-sm font-mono text-primary;
+}
+
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3,
+.markdown-preview h4,
+.markdown-preview h5,
+.markdown-preview h6 {
+  @apply font-serif font-bold text-foreground;
+}
+
+.markdown-preview ul,
+.markdown-preview ol {
+  @apply my-4 ml-6;
+}

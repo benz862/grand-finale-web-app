@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ccc; }
+        .success { color: green; }
+        .error { color: red; }
+        button { padding: 10px 20px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>File Upload localStorage Test</h1>
+    
+    <div class="test-section">
+        <h2>Test localStorage File Upload</h2>
+        <button onclick="testLocalStorage()">Test localStorage Save</button>
+        <button onclick="testLocalStorageRead()">Test localStorage Read</button>
+        <button onclick="clearLocalStorage()">Clear localStorage</button>
+        <div id="test-results"></div>
+    </div>
+
+    <script>
+        function testLocalStorage() {
+            const testUserId = 'test-user-123';
+            const testFileData = {
+                id: crypto.randomUUID(),
+                user_id: testUserId,
+                file_name: 'test-file.pdf',
+                original_file_name: 'test-file.pdf',
+                file_type: 'document',
+                file_category: 'test-category',
+                file_size: 1024,
+                file_extension: 'pdf',
+                file_url: 'https://example.com/test.pdf',
+                qr_code_url: 'data:image/png;base64,test',
+                qr_code_data: 'data:image/png;base64,test',
+                description: 'Test file',
+                created_at: new Date().toISOString(),
+                updated_at: new Date().toISOString()
+            };
+            
+            try {
+                const storageKey = `file_uploads_${testUserId}`;
+                const existingData = localStorage.getItem(storageKey);
+                const existingFiles = existingData ? JSON.parse(existingData) : [];
+                
+                existingFiles.push(testFileData);
+                localStorage.setItem(storageKey, JSON.stringify(existingFiles));
+                
+                document.getElementById('test-results').innerHTML = 
+                    '<div class="success">✅ localStorage save successful! File ID: ' + testFileData.id + '</div>';
+            } catch (error) {
+                document.getElementById('test-results').innerHTML = 
+                    '<div class="error">❌ localStorage save failed: ' + error.message + '</div>';
+            }
+        }
+        
+        function testLocalStorageRead() {
+            const testUserId = 'test-user-123';
+            
+            try {
+                const storageKey = `file_uploads_${testUserId}`;
+                const existingData = localStorage.getItem(storageKey);
+                const existingFiles = existingData ? JSON.parse(existingData) : [];
+                
+                document.getElementById('test-results').innerHTML = 
+                    '<div class="success">✅ localStorage read successful! Found ' + existingFiles.length + ' files</div>' +
+                    '<pre>' + JSON.stringify(existingFiles, null, 2) + '</pre>';
+            } catch (error) {
+                document.getElementById('test-results').innerHTML = 
+                    '<div class="error">❌ localStorage read failed: ' + error.message + '</div>';
+            }
+        }
+        
+        function clearLocalStorage() {
+            try {
+                localStorage.clear();
+                document.getElementById('test-results').innerHTML = 
+                    '<div class="success">✅ localStorage cleared successfully!</div>';
+            } catch (error) {
+                document.getElementById('test-results').innerHTML = 
+                    '<div class="error">❌ localStorage clear failed: ' + error.message + '</div>';
+            }
+        }
+    </script>
+</body>
+</html> 
